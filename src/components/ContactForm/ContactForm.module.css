@@ -1,0 +1,32 @@
+.contactForm {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 150px;
+  width: 300px;
+  border: 1px solid black;
+}
+
+.contactLabel {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  margin-left: 5px;
+  width: 150px;
+}
+
+.contactInput{
+    -moz-appearance:textfield;
+}
+
+.contactSubmit {
+  width: 100px;
+  margin-left: 5px;
+  background-color: white;
+  border-radius: 5px;
+}

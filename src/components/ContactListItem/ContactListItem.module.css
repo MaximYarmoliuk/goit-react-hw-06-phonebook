@@ -1,0 +1,17 @@
+.item {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 300px;
+}
+
+.button {
+  width: 100px;
+  margin-left: 5px;
+  background-color: white;
+  border-radius: 5px;
+  height: 20px;
+}
