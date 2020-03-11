@@ -30,13 +30,7 @@ export default class ThemeContext extends Component {
 
   render() {
     return (
-      <Context.Provider
-        value={ this.state
-          // type: this.state.theme,
-          // config: this.state.themeConfig[this.state.theme],
-          // onToggleTheme: this.toggleTheme
-        }
-      >
+      <Context.Provider value={this.state}>
         {this.props.children}
       </Context.Provider>
     );

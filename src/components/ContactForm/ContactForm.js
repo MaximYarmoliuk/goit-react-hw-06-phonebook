@@ -11,8 +11,23 @@ class ContactForm extends Component {
   };
 
   handleSubmit = e => {
-    const { name, number } = this.state;
     e.preventDefault();
+
+    const { name, number } = this.state;
+    const checkLength = string => string.length < 1;
+    const checkOnExist = this.props.items.find(
+      contact => contact.name === name
+    );
+
+    if (checkLength(`${name}`) || checkLength(`${number}`)) {
+      alert("Please, fill in all required entry fields");
+      return;
+    }
+
+    if (checkOnExist) {
+      alert(`${name} is already in contacts`);
+      return;
+    }
 
     this.props.addContact({ name, number });
 
@@ -70,8 +85,14 @@ class ContactForm extends Component {
   }
 }
 
+const mapStateToProps = ({ contacts }) => {
+  return contacts;
+};
+
 const mapDispatchToProps = {
   addContact: contactsAction.addContact
-}
+};
 
-export default withTheme(connect(null, mapDispatchToProps)(ContactForm));
+export default withTheme(
+  connect(mapStateToProps, mapDispatchToProps)(ContactForm)
+);
